@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+// Kevin Fry - MIU 1310 - Project 3
+-->
+<html>
+    <head>
+        <title>My Pricebook Application</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="thisweeksad, pricebook, grocery shopping">
+        <meta name="description" content="Keep track of your shopping from your grocery shopping trips.">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div data-role="page" id="home">
+            <div data-role="header" data-position="fixed" data-theme="e">
+                <h1>Pricebook App</h1>
+            </div>
+
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="true" data-theme="a">
+                        <h3>Stores</h3>
+                        <p>Stores are places in which you shop.</p>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                        <h3>Departments</h3>
+                        <p>Main categories for each store.</p>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true" data-theme="c">
+                        <h3>Categories</h3>
+                        <p>Keywords in which you would search for.</p>
+                    </div>
+                </div>
+                <p>
+                    <a href="#stores" data-role="button" data-icon="arrow-r" data-iconpos="right">Stores</a>
+                </p>
+
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li data-role="list-divider">Stores<span class="ui-li-count">6</span></li>
+                    <li>
+                        <a href="#acme">
+                        <h3>Acme</h3>
+                        <p>Local stores to do your shopping</p>
+                        </a>
+                    </li>
+                    <li data-role="list-divider">Departments</li>
+                    <li>Grocery</li>
+                </ul>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><input type="reset" value="Clear" data-theme="a"></div>
+                    <div class="ui-block-b"><input type="submit" value="Log" data-theme="b"></div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <ul data-role="listview" data-inset="true">
+                        <li data-role="list-divider">Stores</li>
+                        <li>Acme</li>
+                        <li>ShopRite</li>
+                        <li>SuperFresh</li>
+                        <li>Target</li>
+                        <li>Walmart</li>
+                        <li>Giant</li>
+                    </ul>
+                </div>
+                <div class="ui-block-b">
+                    <ul data-role="listview" data-inset="true">
+                        <li data-role="list-divider">Departments</li>
+                        <li>Produce</li>
+                        <li>Meat</li>
+                        <li>Grocery</li>
+                        <li>Frozen</li>
+                        <li>Deli</li>
+                        <li>Health/Beauty</li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- FOOTER -->
+            <div data-role="footer" data-position="fixed" data-id="pagesFooter">
+                <div data-role="navbar" data-grid="c" data-iconpos="top">
+                    <ul>
+                        <li><a href="index.html" data-ajax="false" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                        <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                        <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="stores" data-add-back-btn="true">
+            <div data-role="header" data-position="fixed">
+                <h1>Stores</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-a">Picture</div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-b">Picture</div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-c">Picture</div></div>
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-d">Picture</div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-e">Picture</div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-a">Picture</div></div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="pagesFooter">
+                <div data-role="navbar" data-grid="c" data-iconpos="top">
+                    <ul>
+                        <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                        <li><a href="browse.html" data-ajax="false" data-icon="grid" class="ui-btn-active">Browse</a></li>
+                        <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                        <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="recordpricebook" data-add-back-btn="true">
+            <div data-role="header" data-position="fixed">
+                <h1>Record Pricebook</h1>
+            </div>
+
+            <div data-role="content">
+                <form action="" method="post" id="recordpricebookform">
+                    <div data-role="fieldcontain">
+                        <label for="store">Store</label>
+                        <input type="text" name="store" id="store" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="category">Category</label>
+                        <input type="text" name="category" id="category" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="search">Search</label>
+                        <input type="search" name="search" id="search">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="qty">Qty</label>
+                        <input type="range" name="qty" id="qty" value="1" min="1" max="50">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="taxable">Taxable</label>
+                        <select data-role="slider">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>Department</legend>
+                            <input type="radio" value="grocery" name="department" id="d-grocery">
+                            <label for="d-grocery">Grocery</label>
+                            <input type="radio" value="grocery" name="department" id="d-grocery">
+                            <label for="d-grocery">Grocery</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>Keywords</legend>
+                            <input type="checkbox" value="grocery" name="department" id="d-grocery">
+                            <label for="d-grocery">Grocery</label>
+                            <input type="radio" value="grocery" name="department" id="d-grocery">
+                            <label for="d-grocery">Grocery</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="reset" value="Reset" data-theme="a" />
+                        <input type="submit" value="Submit" data-theme="b" />
+                    </div>
+                </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="pagesFooter">
+                <div data-role="navbar" data-grid="c" data-iconpos="top">
+                    <ul>
+                        <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                        <li><a href="browse.html" data-ajax="false" data-icon="grid" class="ui-btn-active">Browse</a></li>
+                        <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                        <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+    </body>
+</html>

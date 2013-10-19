@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+// Kevin Fry - MIU 1310 - Project 3
+-->
+<html>
+<head>
+    <title>My Shopping Application: Add Pricebook Item</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="thisweeksad, pricebook, grocery shopping">
+    <meta name="description" content="Keep track of your shopping from your grocery shopping trips.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" type="text/css" />
+</head>
+<body>
+    <!--HOMEPAGE--><div data-role="page" id="home">
+            
+        <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
+            <h1>Pricebook App</h1>
+        </div><!--END HEADER-->
+            
+        <!--CONTENT--><div data-role="content">
+            <h2>Add Pricebook Item</h2>
+            <form action="" id="pricebookForm"><!-- enctype="text/plain"-->
+            <fieldset>
+            <legend>New Pricebook Item</legend>
+            <span>* <em>Denotes a required field</em></span>
+                <br />
+                <div id="error"><span></span></div>
+            <div data-role="fieldcontain"><!--data-native-menu="false"-->
+            <label for="location">*Store</label>
+                <select name="location" id="location" data-native-menu="false">
+                    <option data-placeholder="true" value="">Select a store</option>
+                    <!--<optgroup label="Stores">-->
+                    <option value="Acme">Acme</option>
+                    <option value="Giant">Giant</option>
+                    <option value="ShopRite">ShopRite</option>
+                    <option value="SuperFresh">SuperFresh</option>
+                    <option value="Target">Target</option>
+                    <option value="WalMart">WalMart</option>
+                    <!--</optgroup>-->
+                </select>
+            </div>
+            <div data-role="fieldcontain"><!--data-native-menu="false"-->
+            <label for="department">*Department</label>
+                <select name="department" id="department" data-native-menu="false">
+                    <option data-placeholder="true" value="">Select a department</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Deli">Deli</option>
+                    <option value="Frozen">Frozen</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="HBA">Health &amp; Beauty</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Produce">Produce</option>
+                    <option value="Seafood">Seafood</option>
+                </select>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="productBrand">*Product Brand</label>
+                <input type="text" name="productBrand" id="productBrand" placeholder="Brand" required />
+                <label for="productBrand" class="formhint">(ex. Kraft, EE, Store Brand, Folgers, Sea Select, Fresh)</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="productName">*Product Name</label>
+                <input type="text" name="productName" id="productName" placeholder="Product" required />
+                <label for="productName" class="formhint">(ex. Tuna, Mac &amp; Cheese, Pizza, Ground Beef)</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="size">Size</label>
+                <input type="text" name="size" id="size" placeholder="Size with package type">
+                <label for="size" class="formhint">(ex. 15 flz, 10lb bag, 1 gal)</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="productDescription">Product Description</label>
+                <textarea name="productDescription" id="productDescription" placeholder="Description"></textarea>
+                <label for="productDescription" class="formhint">For better remembering.</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="keywords">Keywords</label>
+                <input type="text" name="keywords" id="keywords" placeholder="Keywords" />
+                <label for="keywords" class="formhint">How would you ask for this product?</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="productRating">*Product Rating</label>
+                <input type="range" name="productRating" value="3" min="1" max="5" id="productRating" />
+                <label for="productRating" class="formhint">Would you purchase this again?</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="datePurchased">*Date Purchased</label>
+                <input type="date" name="datePurchased" id="datePurchased" placeholder="2013-10-16" required />
+                <label for="datePurchased" class="formhint">YYYY-MM-DD Year-Month-Day</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="price">*Price</label>
+                <input type="text" name="price" id="price" size="6" placeholder="4.99" required />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="taxable">Taxable</label>
+                <select data-role="slider" name="taxable" id="taxable">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" id="formbuttons">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><input type="submit" value="Record" data-theme="b" /></div>
+                    <div class="ui-block-b"><input type="reset" value="Clear" data-theme="a" data-mini="true" /></div>
+                </div>
+            </div>
+            </fieldset>
+            </form>
+            <a href="#display" data-role="button">Display Data (dev)</a>
+            <!--POPUP--><div data-role="popup" id="popupFormSaved" class="popupFormSaved">
+	            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>Congratulations! Your Entry has been saved!<p>
+            </div><!--END POPUP-->
+            <!--POPUP--><div data-role="popup" id="popupFormValuesMissing" class="popupFormValuesMissing">
+	            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>We're sorry, but it seems you have some invalid form entries, please go back and complete the required items.<p>
+            </div><!--END POPUP-->
+        </div>
+        <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
+            <div data-role="navbar" data-grid="c" data-iconpos="top">
+                <ul>
+                    <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                    <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                    <li><a href="additem.html" data-ajax="false" data-icon="plus" class="ui-btn-active">Add</a></li>
+                    <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                </ul>
+            </div>
+        </div><!--END FOOTER-->
+    </div>
+    <!--DISPLAY--><div data-role="page" id="display">
+            
+        <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
+            <h1>Pricebook App</h1>
+        </div><!--END HEADER-->
+            
+        <!--CONTENT--><div data-role="content">
+            <h2>display data</h2>
+            <a href="" id="clearData" data-role="button">Clear Data</a>
+            <div class="showData"></div>
+        </div>
+        <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
+            <div data-role="navbar" data-grid="c" data-iconpos="top">
+                <ul>
+                    <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                    <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                    <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                    <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                </ul>
+            </div>
+        </div><!--END FOOTER-->
+    </div>
+    
+<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/json.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+/* Kevin Fry - MIU 1310 - Project 3 */
+#stores .ui-grid-b div{text-align:center;}    
+div.error{display: block; margin:10px 0; color: #f00; font-style: oblique;}
+#errorClass{display: block; color: #00ff90; font-style: italic;}
+label.formhint {
+    font-size: xx-small;
+    font-style: italic;
+}

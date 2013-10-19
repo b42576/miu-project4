@@ -1,0 +1,5 @@
+git repository: https://github.com/b42576/
+git project branch: https://github.com/b42576/miu-project3/
+git live preview: http://b42576.github.io/miu-project3/index.html
+git live preview bronze: http://b42576.github.io/miu-project3/bronze/index.html
+git live preview gold: http://b42576.github.io/miu-project3/gold/index.html
