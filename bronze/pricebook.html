@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pricebook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../public/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+        body{padding-top:70px;}
+        label.error{display: block; margin:10px 0; color: #f00;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="pricebook.html">Pricebook</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shoppinglist.html">Shopping List</a></li>
+          <li class="dropdown" class="active">
+            <a href="pricebook.html" class="dropdown-toggle" data-toggle="dropdown">Pricebook<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Create</a></li>
+              <li><a href="#">Read</a></li>
+              <li><a href="#">Update</a></li>
+              <li><a href="#">Delete</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="page-header">
+        <h1>Pricebook <small>Create your pricebook</small></h1>
+    </div>
+    <form action="" method="post" name="pricebookForm" id="pricebookForm">
+        <fieldset>
+            <legend>Add Your Pricebook Item</legend>
+            <p>* Denotes a required field.</p>
+            <label for="store">* Store</label><br />
+            <select name="store" id="store" required data-validation-required-message="Please select a store.">
+                <option value="">Select a store</option>
+                <option value="Acme">Acme</option>
+                <option value="Giant">Giant</option>
+                <option value="ShopRite">ShopRite</option>
+                <option value="SuperFresh">SuperFresh</option>
+                <option value="Target">Target</option>
+                <option value="WalMart">WalMart</option>
+            </select><br />
+            <span class="label label-important" id="store"></span>
+
+            <label for="department">* Department</label><br />
+            <select name="department" id="department" required data-validation-required-message="Please select a department.">
+                <option value="">Select a department</option>
+                <option value="dairy">Dairy</option>
+                <option value="deli">Deli</option>
+                <option value="frozen">Frozen</option>
+                <option value="grocery">Grocery</option>
+                <option value="hba">Health &amp; Beauty</option>
+                <option value="meat">Meat</option>
+                <option value="produce">Produce</option>
+                <option value="seafood">Seafood</option>
+            </select><br />
+
+            <label for="brand">* Brand Name</label><br />
+            <input type="text" placeholder="Brand" name="brand" id="brand" required data-validation-required-message="Please input a brand.">
+            <span class="help-block">Kraft, Goya, Campbell's, Scott</span>
+
+            <label for="product">* Product Name</label><br />
+            <input type="text" placeholder="Product" name="product" id="product" required data-validation-required-message="Please input a product.">
+            <span class="help-block">Mac &amp; Cheese, Pinto Beans, Tomatto Soup, Paper Towels</span>
+
+            <label for="size">Size / Package</label><br />
+            <input type="text" placeholder="Size / Package" name="size" id="size">
+            <span class="help-block">8 oz box, 16 oz bag, 8 oz can, 8 roll package</span>
+
+            <label for="date">* Date Purchased</label><br />
+            <input type="date" placeholder="2013-10-19" name="date" id="date" required data-validation-required-message="Please input a date.">
+
+            <label for="price">* Price</label><br />
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                <input class="span1" name="price" id="price" type="text" placeholder="1.99" required data-validation-required-message="Please input a price.">
+            </div><br>
+
+            <label class="tax" for="tax">
+                <input type="checkbox" name="tax" id="tax"> Tax
+            </label><br />
+
+            <button type="submit" class="btn">Submit</button>
+        </fieldset>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="../public/js/bootstrap.js"></script>
+    <script src="../public/js/jqBootstrapValidation.js" type="text/javascript"></script>
+    <script src="js/pricebook.js" type="text/javascript"></script>
+</body>
+</html>
