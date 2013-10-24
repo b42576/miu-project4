@@ -37,6 +37,8 @@ var clearLocal = function(){
         return false;
     }
 };
+var clearLink = $('clearPricebook');
+clearLink.addEventListener("click", clearLocal);
 
 $(window).load(function () { $("input,select,date").not("[type=submit]").jqBootstrapValidation({
                         preventSubmit: true,
