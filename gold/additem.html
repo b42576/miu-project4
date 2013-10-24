@@ -16,14 +16,23 @@
 <body>
     <!--HOMEPAGE--><div data-role="page" id="home">
             
-        <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
-                <h1><a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" /></a></h1>
-        </div><!--END HEADER-->
+            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="d" style="padding-bottom: 35px;">
+                <a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" style="float: left;" /></a>
+                <h1>Pricebook</h1>
+                <a style="display: none;"></a>
+            </div><!--END HEADER-->
             
-        <!--CONTENT--><div data-role="content">
-            <h2>Add Pricebook Item</h2>
-            <form action="" id="pricebookForm"><!-- enctype="text/plain"-->
-            <fieldset>
+        <!--CONTENT--><div data-role="content" data-theme="d">
+<div data-role="inlinetabs" data-content-theme="d" id="tabcontainer">
+    <ul id="tabbar">
+        <li data-tab="1" data-icon="grid">Pricebook</li>
+        <li data-tab="2" data-icon="check">Ad Item</li>
+    </ul>
+
+    <div data-tab="1">
+<h2>Add Pricebook Item</h2>
+            <form action="" id="pricebookForm" data-theme="d"><!-- enctype="text/plain"-->
+            <fieldset data-theme="d">
             <legend>New Pricebook Item</legend>
             <span>* <em>Denotes a required field</em></span>
                 <br />
@@ -111,6 +120,74 @@
             </fieldset>
             </form>
             <a href="#display" data-role="button">Display Data (dev)</a>
+    </div>
+
+    <div data-tab="2">
+        <h2>Add Ad</h2>
+            <form action="" id="adForm"><!-- enctype="text/plain"-->
+            <fieldset data-theme="d">
+            <legend>New Ad Item Entry</legend>
+            <span>* <em>Denotes a required field</em></span>
+                <br />
+                <div id="error"><span></span></div>
+            <fieldset data-theme="c">
+                <legend>Store and Ad Info</legend>
+                <div data-role="fieldcontain"><!--data-native-menu="false"-->
+                <label for="adlocation">*Store</label>
+                    <select name="adlocation" id="adlocation" data-native-menu="false">
+                        <option data-placeholder="true" value="">Select a store</option>
+                        <!--<optgroup label="Stores">-->
+                        <option value="Acme">Acme</option>
+                        <option value="Giant">Giant</option>
+                        <option value="ShopRite">ShopRite</option>
+                        <option value="SuperFresh">SuperFresh</option>
+                        <option value="Target">Target</option>
+                        <option value="WalMart">WalMart</option>
+                        <!--</optgroup>-->
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                <label for="dateAdFrom">*Date Ad From</label>
+                    <input type="date" name="dateAdFrom" id="dateAdFrom" placeholder="2013-10-16" required />
+                    <label for="dateAdFrom" class="formhint">YYYY-MM-DD Year-Month-Day</label>
+                </div>
+                <div data-role="fieldcontain">
+                <label for="dateAdTo">*Date Ad To</label>
+                    <input type="date" name="dateAdTo" id="dateAdTo" placeholder="2013-10-16" required />
+                    <label for="dateAdTo" class="formhint">YYYY-MM-DD Year-Month-Day</label>
+                </div>
+            </fieldset>
+            <div data-role="fieldcontain">
+            <label for="adItem">*Ad Item</label>
+                <input type="text" name="adItem" id="adItem" placeholder="Ad Item" required />
+                <label for="adItem" class="formhint">(ex. Arm &amp; Hammer Detergent, Green Giant Frozen Veggies)</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="size">Varieties</label>
+                <input type="text" name="size" id="size" placeholder="selected varieties">
+                <label for="size" class="formhint">(ex. 45 or 50 ounce or 16 count, 7 to 10 oz)</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="keywords">Keywords</label>
+                <input type="text" name="keywords" id="keywords" placeholder="Keywords" />
+                <label for="keywords" class="formhint">How would you ask for this product?</label>
+            </div>
+            <div data-role="fieldcontain">
+            <label for="adprice">*Price</label>
+                <input type="text" name="adprice" id="adprice" size="6" placeholder="4.99" required />
+            </div>
+            <div data-role="fieldcontain" id="formbuttons">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><input type="submit" value="Record" data-theme="a" /></div>
+                    <div class="ui-block-b"><input type="reset" value="Clear" data-theme="c" data-mini="true" /></div>
+                </div>
+            </div>
+            </fieldset>
+            </form>
+            <a href="#displayAds" data-role="button">Display Ads (dev)</a>
+    </div>
+</div>
+            
             <!--POPUP--><div data-role="popup" id="popupFormSaved" class="popupFormSaved">
 	            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <p>Congratulations! Your Entry has been saved!<p>
@@ -133,14 +210,40 @@
     </div>
     <!--DISPLAY--><div data-role="page" id="display">
             
-        <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
-            <h1>Pricebook App</h1>
-        </div><!--END HEADER-->
+            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="d" style="padding-bottom: 35px;">
+                <a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" style="float: left;" /></a>
+                <h1>Pricebook</h1>
+                <a style="display: none;"></a>
+            </div><!--END HEADER-->
             
-        <!--CONTENT--><div data-role="content">
+        <!--CONTENT--><div data-role="content" data-theme="d">
             <h2>display data</h2>
             <a href="" id="clearData" data-role="button">Clear Data</a>
             <div class="showData"></div>
+        </div>
+        <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
+            <div data-role="navbar" data-grid="c" data-iconpos="top">
+                <ul>
+                    <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                    <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                    <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                    <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                </ul>
+            </div>
+        </div><!--END FOOTER-->
+    </div>
+    <!--DISPLAY--><div data-role="page" id="displayAds">
+            
+            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="d" style="padding-bottom: 35px;">
+                <a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" style="float: left;" /></a>
+                <h1>Display</h1>
+                <a style="display: none;"></a>
+            </div><!--END HEADER-->
+            
+        <!--CONTENT--><div data-role="content" data-theme="d">
+            <h2>display ad data</h2>
+            <a href="" id="clearAdData" data-role="button">Clear Ad Data</a>
+            <div class="showAdData"></div>
         </div>
         <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
             <div data-role="navbar" data-grid="c" data-iconpos="top">

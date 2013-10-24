@@ -16,13 +16,15 @@ Project 4
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
     </head>
     <body>
-        <!--HOMEPAGE--><div data-role="page" id="home">
+        <!--HOMEPAGE--><div data-role="page" id="home" data-theme="a">
             
-            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
-                <h1><a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" /></a></h1>
+            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="a" style="padding-bottom: 35px;">
+                <a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" style="float: left;" /></a>
+                <h1>Home</h1>
+                <a style="display: none;"></a>
             </div><!--END HEADER-->
             
-            <!--CONTENT--><div data-role="content">
+            <!--CONTENT--><div data-role="content" data-theme="a">
                 <!-- FEATURE / CTA -->
                 <div id="divCTA" style="background-image: url(img/feature-woman-shopping.jpg); background-position: 0 0; width: 100%; height: max-content ; background-size: auto; background-repeat: no-repeat">
 
@@ -31,13 +33,13 @@ Project 4
                     </div>
                     <div>
                         <!-- FOR SPACING -->
-                        <a href="additem.html" data-role="button" data-ajax="false" data-theme="d" data-icon="plus" data-inline="true" title="Add Pricebook Item"  data-mini="true">Add Pricebook Item</a>
+                        <a href="additem.html" data-role="button" data-ajax="false" data-theme="a" data-icon="plus" data-inline="true" title="Add Pricebook Item"  data-mini="true">Add Pricebook Item</a>
                         <!--<img src="img/feature-woman-shopping.jpg" alt="woman looking at shopping list" style="width: 100%;" />-->
                     </div>
             
                 </div>
                 <!-- SEARCH -->
-                <div>
+                <div data-theme="a">
                     <h2>Search</h2>
                     <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true">
                         <li data-role="list-divider">Stores<span class="ui-li-count">6</span></li>
@@ -70,17 +72,17 @@ Project 4
                 <div data-role="controlgroup">
                     <a href="browse.html" data-ajax="false" data-role="button" data-icon="search" data-theme="b">Stores</a>
                     <a href="browse.html#browsedepartments" data-ajax="false" data-role="button" data-icon="search" data-theme="b">Departments</a>
-                    <a href="#recentpurchases" data-role="button" data-icon="search" data-theme="b">Recent Purchases</a>
+                    <a href="#recentpurchases" data-role="button" data-icon="search" data-theme="a">Recent Purchases</a>
                 </div>
             </div><!--END CONTENT-->
             
             <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
                 <div data-role="navbar" data-grid="c" data-iconpos="top">
                     <ul>
-                        <li><a href="index.html" data-ajax="false" data-icon="home" class="ui-btn-active">Home</a></li>
-                        <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
-                        <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
-                        <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                        <li data-theme="a"><a href="index.html" data-ajax="false" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li data-theme="b"><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                        <li data-theme="d"><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                        <li data-theme="e"><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
                     </ul>
                 </div>
             </div><!--END FOOTER-->
@@ -88,14 +90,16 @@ Project 4
         </div><!-- END HOMEPAGE -->
         <!--NEWSSTREAM--><div data-role="page" id="recentpurchases" data-add-back-btn="true">
             
-            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="e">
-                <h1><a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" /></a></h1>
+            <!--HEADER--><div data-role="header" data-position="fixed" data-theme="a" style="padding-bottom: 35px;">
+                <a href="index.html" data-ajax="false"><img alt="twa logo" src="img/twa-logo-100x50-3.png" style="float: left;" /></a>
+                <h1><a href="index.html" data-ajax="false">Home</a></h1>
+                <a style="display: none;"></a>
             </div><!--END HEADER-->
             
-            <!--CONTENT--><div data-role="content">
+            <!--CONTENT--><div data-role="content" data-theme="a">
                 <h2>Recent Purchases</h2>
                 <ul id="recentPurchases" data-role="listview">
-                        <li>9/20/2013 - Coffee - $5.99</li>
+                        <li data-theme="a">9/20/2013 - Coffee - $5.99</li>
                         <li>9/19/2013 - Bleach - $1.50</li>
                         <li>9/18/2013 - Mac &amp; Cheese - $1.98</li>
                         <li>9/17/2013 - Pizza - $0.88</li>
@@ -111,10 +115,10 @@ Project 4
             <!--FOOTER--><div data-role="footer" data-position="fixed" data-id="pagesFooter">
                 <div data-role="navbar" data-grid="c" data-iconpos="top">
                     <ul>
-                        <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
-                        <li><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
-                        <li><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
-                        <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                        <li data-theme="a"><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                        <li data-theme="b"><a href="browse.html" data-ajax="false" data-icon="grid">Browse</a></li>
+                        <li data-theme="d"><a href="additem.html" data-ajax="false" data-icon="plus">Add</a></li>
+                        <li data-theme="e"><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
                     </ul>
                 </div>
             </div><!--END FOOTER-->
