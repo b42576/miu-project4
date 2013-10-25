@@ -1,6 +1,5 @@
 git repository: https://github.com/b42576/
 git project branch: https://github.com/b42576/miu-project4/
-git meaningful comit: https://github.com/b42576/miu-project4/tree/31757bd229af683db0391695e15f7f5d2e39e479
 git live preview: http://b42576.github.io/miu-project4/index.html
 git live preview bronze: http://b42576.github.io/miu-project4/bronze/index.html
 git live preview gold: http://b42576.github.io/miu-project4/gold/index.html
